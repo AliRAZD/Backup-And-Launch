@@ -1,3 +1,0 @@
-MODYFIKACJA SKRÓTU
-
-C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "G:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1"
