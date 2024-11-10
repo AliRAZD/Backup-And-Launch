@@ -3,14 +3,23 @@
 The script creates a backup copy of the file or files every time when you start the game.
 
 
+
 ## HOW TO :
 
- COPY AND PASTE FILE BackupAndLaunch.ps1 TO X:\Falcon BMS 4.37\User\Config\
+> <ins>COPY AND PASTE FILE BackupAndLaunch.ps1 TO X:\Falcon BMS 4.37\User\Config\ </ins>
 
-### 1. Modify the Falcon BMS shortcut. Add the following path and set up to yours.
+### 1. Modify the Falcon BMS shortcut. Replace the original path with the one shown below.
+> [!WARNING]
+> Set your own path "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1".
    
    C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1"
-   
+
+   > [!WARNING]
+> Then the Falcon BMS icon will change.
+> 
+
+   ![image](https://github.com/user-attachments/assets/d93c4f70-989f-4c23-853b-f9a051b0f285)
+
 ### 2. Open and Edit BackupAndLaunch.ps1 file ( Open in txt editor like NotePad++ )
 
    #Set the path to the file you want to back up.
