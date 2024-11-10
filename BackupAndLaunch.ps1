@@ -31,24 +31,24 @@ function Show-Notification {
     $notifyIcon.Dispose()
 }
 
-# Lista plików do backupu 
+# List of files to backup 
 $sourceFiles = @(
-    "G:\Falcon BMS 4.37\User\Config\XXX.ini",
-    "G:\Falcon BMS 4.37\User\Config\BMS - Auto.key"
+    "G:\Falcon BMS 4.37\User\Config\XXX.ini", # EXAMPLE 
+    "G:\Falcon BMS 4.37\User\Config\BMS - Auto.key"  #EXAMPLE
 )
 
-# Ścieżka do folderu kopii zapasowych
-$backupFolder = "G:\Falcon BMS 4.37\User\Config\My_Backup\" # ŚCIEŻKA DO FOLDERU Z KOPIAMI ZAPASOWYMI.
+# Path to the backup folder
+$backupFolder = "G:\Falcon BMS 4.37\User\Config\My_Backup\" # EXAMPLE
 
-# Maksymalna liczba kopii zapasowych
-$maxBackups = 2  
+# Number of backups per file
+$maxBackups = 2  #  EXAMPLE
 
-# Upewnij się, że folder backupu istnieje
+
 if (-not (Test-Path -Path $backupFolder)) {
     New-Item -ItemType Directory -Path $backupFolder
 }
 
-# Funkcja do tworzenia kopii zapasowej
+
 function Backup-File {
     param (
         [string]$sourceFile,
@@ -56,35 +56,35 @@ function Backup-File {
     )
 
     if (Test-Path $sourceFile) {
-        # Nazwa pliku i rozszerzenie
+        
         $fileName = [System.IO.Path]::GetFileNameWithoutExtension($sourceFile)
         $fileExtension = [System.IO.Path]::GetExtension($sourceFile)
 
-        # Generowanie nazwy kopii zapasowej z datą
+        
         $backupFile = "$backupFolder\$fileName-$(Get-Date -Format 'yyyy-MM-dd_HH-mm-ss')$fileExtension"
 
-        # Kopiowanie pliku
+        
         Copy-Item -Path $sourceFile -Destination $backupFile -Force
 
-        # Logowanie utworzenia kopii zapasowej
-        Log-Message "Utworzono kopię zapasową pliku: $sourceFile do $backupFile"
+        
+        Log-Message "Backup file created: $sourceFile do $backupFile"
 
-        # Zarządzanie liczbą kopii zapasowych
+        
         $backupFiles = Get-ChildItem -Path $backupFolder -Filter "$fileName*$fileExtension" | Sort-Object CreationTime
         if ($backupFiles.Count -gt $maxBackups) {
             $filesToRemove = $backupFiles | Select-Object -First ($backupFiles.Count - $maxBackups)
             foreach ($fileToRemove in $filesToRemove) {
-                Log-Message "Usuwanie najstarszego pliku backupu: $($fileToRemove.FullName)"
+                Log-Message "Deleting the oldest backup file: $($fileToRemove.FullName)"
                 Remove-Item $fileToRemove.FullName -Force
             }
         }
     } else {
-        Log-Message "Plik nie istnieje: $sourceFile"
+        Log-Message "The file does not exist: $sourceFile"
     }
 }
 
-# Funkcja do logowania
-$logFile = "G:\Falcon BMS 4.37\User\Config\My_Backup\backup_log.txt"  # ŚCIEŻKA DO FOLDERU, GDZIE MA ZOSTAĆ PLIK Z LOGAMI.
+# Path to LOG file
+$logFile = "G:\Falcon BMS 4.37\User\Config\My_Backup\backup_log.txt"  # EXAMPLE
 function Log-Message {
     param (
         [string]$message
@@ -93,18 +93,18 @@ function Log-Message {
     Add-Content -Path $logFile -Value "$timestamp - $message"
 }
 
-# Backup każdego pliku z listy
+
 foreach ($sourceFile in $sourceFiles) {
-    Log-Message "Przetwarzanie pliku: $sourceFile"
+    Log-Message "File processing: $sourceFile"
     Backup-File -sourceFile $sourceFile -backupFolder $backupFolder
 }
 
-# Powiadomienie o zakończeniu procesu backupu
-Show-Notification -title "Backup Process" -message "Tworzenie kopii zapasowej pliku/plikow zostalo zakonczone."
 
-# Logowanie uruchomienia aplikacji
-Log-Message "Uruchamianie aplikacji: FalconBMS_Alternative_Launcher.exe"
+Show-Notification -title "Backup Process" -message "The backup of the file(s) has been completed."
 
-# Uruchomienie aplikacji
-Start-Process "G:\Falcon BMS 4.37\Launcher\FalconBMS_Alternative_Launcher.exe" # ŚCIEŻKA DO PLIKU WYKONYWALNEGO.
+
+Log-Message "Running the application: FalconBMS_Alternative_Launcher.exe"
+
+
+Start-Process "G:\Falcon BMS 4.37\Launcher\FalconBMS_Alternative_Launcher.exe" # EXAMPLE
 
