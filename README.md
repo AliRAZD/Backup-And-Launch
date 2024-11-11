@@ -9,7 +9,7 @@ The script creates a backup copy of the file or files every time when you start 
 > <ins>COPY AND PASTE FILE BackupAndLaunch.ps1 TO X:\Falcon BMS 4.37\User\Config\ </ins>
 
 ### 1. Modify the Falcon BMS shortcut. Replace the original path with the one shown below.
-> [!WARNING]
+> [!WARNING] 
 > Set your own path "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1".
    
    C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1"
