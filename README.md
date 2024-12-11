@@ -12,10 +12,10 @@ The script creates a backup copy of the file or files every time when you start 
 > [!WARNING] 
 > Set your own path "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1".
    
-   C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -WindowStyle Hidden -NoProfile -ExecutionPolicy Bypass -File "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1"
+   C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -NoProfile -Command "& 'G:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1'"
 
    > [!WARNING]
-> Then the Falcon BMS icon will change.
+> Falcon BMS icon will change.
 > 
 
    ![image](https://github.com/user-attachments/assets/d93c4f70-989f-4c23-853b-f9a051b0f285)
