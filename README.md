@@ -23,7 +23,7 @@ The script creates a backup copy of the file or files every time when you start 
 
 ### 2. Open and Edit BackupAndLaunch.ps1 file ( Open in txt editor like NotePad++ )
 
-   #Set the path to the file you want to back up.
+   #Set the path to the folder where you want to save backups.
 
    ![image](https://github.com/user-attachments/assets/b8afd024-605e-4538-95bf-8012e675654e)
 
