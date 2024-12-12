@@ -29,7 +29,7 @@ Set your own path "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1".
    ![image](https://github.com/user-attachments/assets/b8afd024-605e-4538-95bf-8012e675654e)
 
 
-   #Set the number of backups per file (per path)
+   #Set the number of backups per file (per path). Default is set "2"
 
    ![image](https://github.com/user-attachments/assets/aa96ed37-98b5-4ff4-be31-8b93fcd93c9d)
 
