@@ -6,7 +6,8 @@ This script creates a backup of the file or files every time you launch the game
 
 ## HOW TO :
 
-> <ins>COPY AND PASTE BackupAndLaunch.ps1 TO X:\Falcon BMS 4.37\User\Config\ </ins>
+> [!IMPORTANT]
+> COPY AND PASTE BackupAndLaunch.ps1 TO X:\Falcon BMS 4.37\User\Config\ 
 
 ### 1. Modify the Falcon BMS shortcut. Replace the original path with the one shown below.
 > [!WARNING] 
