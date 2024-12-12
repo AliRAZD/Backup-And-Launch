@@ -1,6 +1,6 @@
-# Backup and Launch Script For Falcon BMS 4.37
+# Backup and Launch Script For Falcon BMS.
 ---
-This script creates a backup of the file or files every time you launch the game.
+### This script creates a backup of the file or files every time you launch the game.
 
 
 
