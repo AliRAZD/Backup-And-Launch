@@ -24,6 +24,11 @@ Set your own path "X:\Falcon BMS 4.37\User\Config\BackupAndLaunch.ps1".
 
 ### 2. Open and Edit BackupAndLaunch.ps1 file ( Open in txt editor like NotePad++ )
 
+   #Set the path to the file/files which you want to backup.
+   
+   ![image](https://github.com/user-attachments/assets/915dcf68-b501-45fd-90ae-79adcafa018e)
+
+
    #Set the path to the folder where you want to save backups.
 
    ![image](https://github.com/user-attachments/assets/b8afd024-605e-4538-95bf-8012e675654e)
