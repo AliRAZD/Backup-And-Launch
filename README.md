@@ -43,10 +43,17 @@ In shortcut, set your own path to the script "XXX:\Falcon BMS 4.37\User\Config\B
 
    ![image](https://github.com/user-attachments/assets/fba3e718-634a-4df8-9407-8796ea15c547)
 
-
-
+   > [!IMPORTANT]
+   > Script will create two files copy per file, the next files will be overwrite. If you want to change number copies per file
+   > you can do this in script file. Just, open script file using for ex. Notepad +++
+   > Find function $maxBackups = 2 and set your own.
+   > ![image](https://github.com/user-attachments/assets/811dc052-c3c2-4fb7-a186-40b11af4872a)
+    
    #  Thats all
    #  Now, every time when you run Falcon BMS, the script will create a backup file.
+
+
+   
 
    
 
