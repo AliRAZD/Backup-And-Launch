@@ -45,7 +45,7 @@ In shortcut, set your own path to the script "XXX:\Falcon BMS 4.37\User\Config\B
 
    > [!IMPORTANT]
    > Script will create two files copy per file, the next files will be overwrite. If you want to change number copies per file
-   > you can do this in script file. Just, open script file using for ex. Notepad +++
+   > you can do this in script file. Just, open script file using any txt editor for ex. Notepad++
    > Find function $maxBackups = 2 and set your own.
    > ![image](https://github.com/user-attachments/assets/811dc052-c3c2-4fb7-a186-40b11af4872a)
     
